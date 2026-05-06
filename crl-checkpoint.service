@@ -1,0 +1,12 @@
+[Unit]
+Description=CRL Audit Daily Checkpoint (§9 chain integrity)
+After=network.target
+
+[Service]
+Type=oneshot
+User=golden
+WorkingDirectory=/mnt/ai/tools/Command Center/crl
+ExecStart=/mnt/ai/runtime/venvs/llm/bin/python3 crl_audit.py --checkpoint
+StandardOutput=journal
+StandardError=journal
+TimeoutStartSec=60

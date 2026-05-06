@@ -1,0 +1,11 @@
+[Unit]
+Description=CRL Audit Daily Checkpoint Timer
+Requires=crl-checkpoint.service
+
+[Timer]
+OnCalendar=*-*-* 03:00:00
+Persistent=true
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target
